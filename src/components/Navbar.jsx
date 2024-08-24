@@ -8,17 +8,21 @@ function Navbar(props) {
 
   // Function to check the scroll position
   const handleScroll = () => {
-    const position = window.scrollY;
-    setIsFixed(position > 0); // Fixed when not at the top
+    if (typeof window !== "undefined") {  // Ensure window is defined
+      const position = window.scrollY;
+      setIsFixed(position > 0); // Fixed when not at the top
+    }
   };
 
   // Set up event listener for scrolling
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    if (typeof window !== "undefined") {  // Ensure window is defined
+      window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
   }, []);
 
   return (

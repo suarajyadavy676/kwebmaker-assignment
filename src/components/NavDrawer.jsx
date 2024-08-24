@@ -4,12 +4,10 @@ import React, { useEffect, useRef, useState } from "react";
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  Input,
   Button,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -17,13 +15,20 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 // Custom hook to detect screen size
 function useScreenSize() {
-  const [isXL, setIsXL] = useState(window.innerWidth >= 1280);
+  const [isXL, setIsXL] = useState(false);
 
   useEffect(() => {
+    // This check ensures the code only runs on the client side
     const handleResize = () => {
-      setIsXL(window.innerWidth >= 1280);
+      if (typeof window !== "undefined") {
+        setIsXL(window.innerWidth >= 1280);
+      }
     };
 
+    // Run on initial load
+    handleResize();
+
+    // Add event listener for window resize
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -34,7 +39,7 @@ function useScreenSize() {
 function NavDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
-  const isXL = useScreenSize(); // Move this hook call here
+  const isXL = useScreenSize();
 
   useEffect(() => {
     if (isXL && isOpen) {
