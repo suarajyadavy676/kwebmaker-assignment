@@ -25,7 +25,7 @@ function Category() {
             <p className="pt-32 px-10 pb-3">Undercoats</p>
           </div>
           <div className="bg-[url('/category/c5.png')] bg-cover bg-center bg-no-repeat h-[200px]">
-            <p className="pt-32 px-10 pb-3">Painting Tools</p>
+            <p className="pt-32 px-10 pb-3" id="services">Painting Tools</p>
           </div>
         </div>
       </div>

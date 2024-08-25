@@ -12,6 +12,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import Link from "next/link";
 
 // Custom hook to detect screen size
 function useScreenSize() {
@@ -60,19 +61,19 @@ function NavDrawer() {
           finalFocusRef={btnRef}
         >
           <DrawerOverlay />
-          <DrawerContent>
+          <DrawerContent bg={"#0060AF"} color="white">
             <DrawerCloseButton />
-            <DrawerHeader>Home</DrawerHeader>
+            <DrawerHeader onClick={onClose} className="hover:text-red-500"><Link href="/">Home</Link></DrawerHeader>
 
-            <DrawerBody>
-              <p>About</p>
-              <p>Category</p>
-              <p>Services</p>
-              <p>Colours</p>
-              <p>Downloads</p>
-              <p>Become a dealer</p>
-              <p>Blogs</p>
-              <p>Contact</p>
+            <DrawerBody onClick={onClose}>
+              <p className="my-4 hover:text-red-500"> <Link href="#about">About</Link></p>
+              <p className="my-4 hover:text-red-500"><Link href="#category">Category</Link></p>
+              <p className="my-4 hover:text-red-500"> <Link href="#services">Services</Link></p>
+              <p className="my-4 hover:text-red-500"><Link href="#colours">Colours</Link></p>
+              <p className="my-4 hover:text-red-500"><Link href="#downloads">Downloads</Link></p>
+              <p className="my-4 hover:text-red-500"><Link href="#dealer">Become a dealer</Link></p>
+              <p className="my-4 hover:text-red-500"><Link href="#blogs">Blogs</Link></p>
+              <p className="my-4 hover:text-red-500"><Link href="#contact">Contact</Link></p>
             </DrawerBody>
           </DrawerContent>
         </Drawer>

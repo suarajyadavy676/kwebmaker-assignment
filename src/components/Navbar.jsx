@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import NavDrawer from "./NavDrawer";
+import Link from "next/link";
 
 function Navbar(props) {
   const [isFixed, setIsFixed] = useState(false);
@@ -30,22 +31,22 @@ function Navbar(props) {
       <div className="flex flex-wrap justify-between px-6 text-sm">
         {/* Logo */}
         <div>
-          <Image src="/logo.png" alt="logo" width={100} height={100} />
+        <Link href="/"><Image src="/logo.png" alt="logo" width={100} height={100} /></Link>       
         </div>
 
         {/* Navigation for larger screens */}
         <nav className="hidden xl:block">
           <ul className="grid grid-cols-9 gap-4">
-            <li><button>About</button></li>
-            <li><button>Category</button></li>
-            <li><button>Services</button></li>
-            <li><button>Colours</button></li>
-            <li><button>Downloads</button></li>
-            <li><button>Become a dealer</button></li>
-            <li><button>Blogs</button></li>
-            <li><button>Contact</button></li>
+            <li><button className="hover:text-red-500"><Link href="#about">About</Link></button></li>
+            <li><button className="hover:text-red-500"><Link href="#category">Category</Link></button></li>
+            <li><button className="hover:text-red-500"><Link href="#services">Services</Link></button></li>
+            <li><button className="hover:text-red-500"><Link href="#colours">Colours</Link></button></li>
+            <li><button className="hover:text-red-500"><Link href="#downloads">Downloads</Link></button></li>
+            <li><button className="hover:text-red-500"><Link href="#dealer">Become a dealer</Link></button></li>
+            <li><button className="hover:text-red-500"><Link href="#blogs">Blogs</Link></button></li>
+            <li><button className="hover:text-red-500"><Link href="#contact">Contact</Link></button></li>
             <li>
-              <button className="bg-white rounded-xl text-blue-500 py-1 px-2">
+              <button className="bg-white rounded-xl text-blue-500 py-1 px-2 hover:text-red-500">
                 Enquire Now
               </button>
             </li>

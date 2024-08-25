@@ -7,6 +7,7 @@ import { PiFacebookLogoLight } from "react-icons/pi";
 import { CiInstagram } from "react-icons/ci";
 import { CiYoutube } from "react-icons/ci";
 import { FaXTwitter } from "react-icons/fa6";
+import Link from "next/link";
 
 function Footer1() {
   return (
@@ -19,6 +20,7 @@ function Footer1() {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
+        id="contact"
       >
         <h1 className="text-center mb-8">Group Company</h1>
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-5 text-center justify-between w-[90%] mx-auto">
@@ -27,42 +29,40 @@ function Footer1() {
             alt="group company 1"
             width={100}
             height={100}
-            
           />
           <Image
             src="/group/g2.png"
             alt="group company 2"
             width={100}
             height={100}
-           
           />
           <Image
             src="/group/g3.png"
             alt="group company 3"
             width={100}
             height={100}
-            
           />
           <Image
             src="/group/g4.png"
             alt="group company 4"
             width={100}
             height={100}
-            
           />
           <Image
             src="/group/g5.png"
             alt="group company 5"
             width={100}
             height={100}
-            
           />
         </div>
         {/* horizontal line */}
         <hr className="text-white text-2xl my-9" />
         <div className="flex justify-between flex-wrap">
           <div>
-            <Image src="/logo.png" alt="logo" width={150} height={150} />
+            <Link href="/">
+              <Image src="/logo.png" alt="logo" width={150} height={150} />
+            </Link>
+
             <p className="my-2">Reach Us</p>
 
             <p className="my-2">
@@ -130,7 +130,12 @@ function Footer1() {
                 <p className="my-2">Become a dealer</p>
                 <p className="my-2">Blogs</p>
                 <p className="my-2">Contact</p>
-                <p className="my-2"><PiFacebookLogoLight className="inline mr-2 text-2xl" /><CiInstagram className="inline mr-2 text-2xl" /><CiYoutube className="inline mr-2 text-2xl" /><FaXTwitter className="inline mr-2 text-2xl" /></p>
+                <p className="my-2">
+                  <PiFacebookLogoLight className="inline mr-2 text-2xl" />
+                  <CiInstagram className="inline mr-2 text-2xl" />
+                  <CiYoutube className="inline mr-2 text-2xl" />
+                  <FaXTwitter className="inline mr-2 text-2xl" />
+                </p>
               </div>
             </div>
           </div>

@@ -27,7 +27,7 @@ function Services({ homeServicesSubtitle, homeServicesTitle }) {
         <div className="py-20"></div>
           <div className="bg-[#FFE71099] pt-10">
           <p>Painting</p>
-          <p>Lorem ipsum dolor sit amet consectetur. </p>
+          <p id="colours">Lorem ipsum dolor sit amet consectetur. </p>
           <Button/>
           </div>
         </div>
