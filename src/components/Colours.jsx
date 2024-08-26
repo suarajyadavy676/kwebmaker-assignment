@@ -5,7 +5,7 @@ function Colours() {
     <div className="w-[90%] mx-auto mt-20">
       <p className="text-lg font-bold">Colours</p>
       <div className="flex justify-between flex-wrap">
-        <p className="my-2 text-2xl font-extrabold">Popular Colours</p>
+        <p className="my-2 text-2xl font-extrabold" id='dealer'>Popular Colours</p>
         <button className="my-2 border-2 border-green-600 px-2 py-1 rounded-lg">Explore More</button>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-6 gap-5 text-center my-10">

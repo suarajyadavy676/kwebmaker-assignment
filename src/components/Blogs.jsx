@@ -3,7 +3,7 @@ import React from "react";
 
 function Blogs(props) {
   const { blogSubtitle, blogTitle } = props;
-  console.log("homepage", props);
+  // console.log("homepage", props);
   return (
     <div className="mt-14 w-[90%] mx-auto mb-20">
       <h1 className="text-lg font-bold">{blogSubtitle}</h1>

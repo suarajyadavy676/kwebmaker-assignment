@@ -6,98 +6,99 @@ import Services from "@/components/Services";
 import Category from "@/components/Category";
 import Button from "@/components/Button";
 import Image from "next/image";
+import { GET_HOME_PAGE_AND_SEO_DATA } from "@/data/seoAndHomePageData";
 
 // Define the GraphQL query
-const GET_HOME_PAGE_AND_SEO_DATA = gql`
-  {
-    pages(where: { name: "Homepage" }) {
-      nodes {
-        homepage {
-          banners {
-            bannerImage {
-              node {
-                sourceUrl
-              }
-            }
-            bannersTitle
-            bannerDescription
-            bannerButton {
-              title
-              url
-              target
-            }
-          }
-          homeAboutTitle
-          homeAboutSubtitle
-          homeAboutButton {
-            target
-            title
-            url
-          }
-          homeAboutVideoImage {
-            node {
-              sourceUrl
-            }
-          }
-          homeAboutVideoUrl
-          homeAboutDescription
-          homeCategoryTitle
-          homeCategorySubtitle
-          homeServicesTitle
-          homeServicesSubtitle
-          homeColoursTitle
-          homeColoursSubtitle
-          homeColoursButton {
-            target
-            title
-            url
-          }
-          homeJoinBackgroundImage {
-            node {
-              sourceUrl
-            }
-          }
-          homeJoinTitle
-          homeJoinSubtitle
-          homeJoinButton {
-            target
-            title
-            url
-          }
-          homeJoinDescription
-          blogTitle
-          blogSubtitle
-          categories {
-            link
-            title
-            image {
-              node {
-                sourceUrl
-              }
-            }
-          }
-        }
-        seo {
-          canonical
-          metaKeywords
-          metaDesc
-          title
-          opengraphType
-          opengraphSiteName
-          opengraphTitle
-          opengraphDescription
-          opengraphUrl
-          schema {
-            raw
-          }
-          opengraphImage {
-            mediaItemUrl
-          }
-        }
-      }
-    }
-  }
-`;
+// const GET_HOME_PAGE_AND_SEO_DATA = gql`
+//   {
+//     pages(where: { name: "Homepage" }) {
+//       nodes {
+//         homepage {
+//           banners {
+//             bannerImage {
+//               node {
+//                 sourceUrl
+//               }
+//             }
+//             bannersTitle
+//             bannerDescription
+//             bannerButton {
+//               title
+//               url
+//               target
+//             }
+//           }
+//           homeAboutTitle
+//           homeAboutSubtitle
+//           homeAboutButton {
+//             target
+//             title
+//             url
+//           }
+//           homeAboutVideoImage {
+//             node {
+//               sourceUrl
+//             }
+//           }
+//           homeAboutVideoUrl
+//           homeAboutDescription
+//           homeCategoryTitle
+//           homeCategorySubtitle
+//           homeServicesTitle
+//           homeServicesSubtitle
+//           homeColoursTitle
+//           homeColoursSubtitle
+//           homeColoursButton {
+//             target
+//             title
+//             url
+//           }
+//           homeJoinBackgroundImage {
+//             node {
+//               sourceUrl
+//             }
+//           }
+//           homeJoinTitle
+//           homeJoinSubtitle
+//           homeJoinButton {
+//             target
+//             title
+//             url
+//           }
+//           homeJoinDescription
+//           blogTitle
+//           blogSubtitle
+//           categories {
+//             link
+//             title
+//             image {
+//               node {
+//                 sourceUrl
+//               }
+//             }
+//           }
+//         }
+//         seo {
+//           canonical
+//           metaKeywords
+//           metaDesc
+//           title
+//           opengraphType
+//           opengraphSiteName
+//           opengraphTitle
+//           opengraphDescription
+//           opengraphUrl
+//           schema {
+//             raw
+//           }
+//           opengraphImage {
+//             mediaItemUrl
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 
 // Fetch data directly in the component
 async function fetchData() {
@@ -109,7 +110,7 @@ async function fetchData() {
 
 export default async function Home() {
   const { seo, homepage } = await fetchData();
-  console.log("homepage in page : ", homepage);
+  // console.log("seo in page : ", seo);
 
   return (
     <main className="">
